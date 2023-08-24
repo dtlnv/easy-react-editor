@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Toolbar from './toolbar';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -9,10 +11,11 @@ library.add(fas);
 interface EditorProps {
   text: string;
   setText: (value: string) => void;
+  placeholder?: string;
   tools?: string[];
 }
 
-const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, tools }) => {
+const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, placeholder = 'Type text here...', tools }) => {
   const [defaultText] = React.useState<string>(text);
   const ref = React.useRef<HTMLDivElement>(null);
 
@@ -42,7 +45,7 @@ const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, tools }) => {
         contentEditable
         suppressContentEditableWarning
         dangerouslySetInnerHTML={{ __html: defaultText }}
-        data-placeholder='Type text here...'
+        data-placeholder={placeholder}
         ref={ref}
         onPaste={clearEditor}
         onInput={saveText}

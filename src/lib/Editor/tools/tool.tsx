@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface ToolProps {
   icon?: IconProp;
-  type?: string;
   title?: string;
   [x: string]: any;
 }
 
-const Tool: React.FC<ToolProps> = ({ type, icon, title, ...rest }) => (
+const Tool: React.FC<ToolProps> = ({ icon, title, ...rest }) => (
   <div
     className='tool'
+    title={title}
     onMouseDown={(e) => {
       e.preventDefault();
-      const element = document?.querySelector('#ssre .content') as HTMLElement | null;
+      const element = document?.querySelector('#ereditor .content') as HTMLElement | null;
 
       if (element) {
         if (typeof element.focus === 'function') {
@@ -21,10 +21,9 @@ const Tool: React.FC<ToolProps> = ({ type, icon, title, ...rest }) => (
         }
       }
     }}
-    title={title}
     {...rest}
   >
-    {icon ? <FontAwesomeIcon icon={icon} /> : type}
+    {icon && <FontAwesomeIcon icon={icon} />}
   </div>
 );
 
