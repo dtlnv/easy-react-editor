@@ -12,7 +12,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
-    "test": "react-scripts test --no-cache --watch --coverage --collectCoverageFrom=src/lib/**/*.{js,jsx,ts,tsx}"
+    "test": "react-scripts test --no-cache --watchAll --coverage --collectCoverageFrom=src/lib/**/*.{js,jsx,ts,tsx}"
   },
   "eslintConfig": {
     "extends": [
