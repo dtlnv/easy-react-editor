@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import EasyReactEditor from './lib/Editor';
 
 function App() {
