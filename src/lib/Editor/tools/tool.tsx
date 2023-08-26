@@ -14,7 +14,7 @@ const Tool: React.FC<ToolProps> = ({ icon, title, ...rest }) => (
     title={title}
     onMouseDown={(e) => {
       e.preventDefault();
-      const element = document?.querySelector('#ereditor .content') as HTMLElement | null;
+      const element = document?.querySelector('#ereditor .ere-content') as HTMLElement | null;
 
       if (element && typeof element.focus === 'function') {
         element.focus();
