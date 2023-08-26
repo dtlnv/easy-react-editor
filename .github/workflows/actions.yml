@@ -31,7 +31,7 @@ jobs:
     - name: Check dependencies for Vulnerabilities (Audit)
       run: yarn audit
       timeout-minutes: 10 
-    - name: Build the project
-      run: yarn build --if-present
     - name: Test functionality
       run: yarn test
+    - name: Check build of the project
+      run: yarn build
