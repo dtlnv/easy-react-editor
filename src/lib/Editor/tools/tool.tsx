@@ -9,16 +9,14 @@ interface ToolProps {
 
 const Tool: React.FC<ToolProps> = ({ icon, title, ...rest }) => (
   <div
-    className='tool'
+    className='ere-tool'
     title={title}
     onMouseDown={(e) => {
       e.preventDefault();
       const element = document?.querySelector('#ereditor .content') as HTMLElement | null;
 
-      if (element) {
-        if (typeof element.focus === 'function') {
-          element.focus();
-        }
+      if (element && typeof element.focus === 'function') {
+        element.focus();
       }
     }}
     {...rest}

@@ -1,24 +1,24 @@
 import './styles/tools.css';
 import { Bold, Hr, Italic, Ol, Redo, StrikeThrough, Ul, Underline, Undo } from './tools';
 
-const defaultTools: string[] = ['Undo', 'Redo', 'Bold', 'Italic', 'Underline', 'Ul', 'Ol', 'Hr'];
+export const defaultTools: string[] = ['Undo', 'Redo', 'Bold', 'Italic', 'Underline', 'StrikeThrough', 'UL', 'OL', 'HR'];
 
 interface ToolbarProps {
-  tools: string[] | undefined;
+  tools?: string[] | undefined;
 }
 
 const Toolbar: React.FC<ToolbarProps> = ({ tools = defaultTools }) => {
   return (
-    <div id='tools'>
+    <div id='ere-tools'>
       {tools?.includes('Undo') && <Undo />}
       {tools?.includes('Redo') && <Redo />}
       {tools?.includes('Bold') && <Bold />}
       {tools?.includes('Italic') && <Italic />}
       {tools?.includes('StrikeThrough') && <StrikeThrough />}
       {tools?.includes('Underline') && <Underline />}
-      {tools?.includes('Ul') && <Ul />}
-      {tools?.includes('Ol') && <Ol />}
-      {tools?.includes('Hr') && <Hr />}
+      {tools?.includes('UL') && <Ul />}
+      {tools?.includes('OL') && <Ol />}
+      {tools?.includes('HR') && <Hr />}
     </div>
   );
 };

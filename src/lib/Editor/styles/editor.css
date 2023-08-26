@@ -16,17 +16,15 @@
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-#ereditor .content {
+#ereditor .ere-content {
   outline: none;
   text-align: left;
   max-height: 85vh;
   overflow-y: auto;
 }
 
-#ereditor .content:empty::before {
+#ereditor .ere-content:empty::before {
   content: attr(data-placeholder);
-  /* position: absolute; */
-  /* z-index: -2; */
   opacity: 0.5;
   cursor: text;
 }

@@ -41,7 +41,7 @@ const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, placeholder = '
   return (
     <div id='ereditor'>
       <div
-        className='content'
+        className='ere-content'
         contentEditable
         suppressContentEditableWarning
         dangerouslySetInnerHTML={{ __html: defaultText }}
