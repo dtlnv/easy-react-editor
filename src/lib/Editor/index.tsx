@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Toolbar from './toolbar';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -16,14 +14,23 @@ interface EditorProps {
 }
 
 const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, placeholder = 'Type text here...', tools }) => {
-  const [defaultText] = useState<string>(text);
-  const ref = useRef<HTMLDivElement>(null);
+  const [isInitialMount, setIsInitialMount] = useState(true);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isInitialMount && contentRef.current) {
+      contentRef.current.innerHTML = text;
+    }
+    setIsInitialMount(false);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInitialMount]);
 
   const clearEditorAction = async () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        if (ref.current) {
-          const elements: NodeListOf<Element> = ref.current.querySelectorAll('*');
+        if (contentRef.current) {
+          const elements: NodeListOf<Element> = contentRef.current.querySelectorAll('*');
           elements.forEach((element: Element) => {
             element.removeAttribute('style');
           });
@@ -34,9 +41,9 @@ const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, placeholder = '
   };
 
   const saveTextAction = async () => {
-    if (ref.current) {
+    if (contentRef.current) {
       await clearEditorAction();
-      setText(ref.current.innerHTML);
+      setText(contentRef.current.innerHTML);
     }
   };
 
@@ -46,11 +53,10 @@ const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, placeholder = '
         className='ere-content'
         contentEditable
         suppressContentEditableWarning
-        dangerouslySetInnerHTML={{ __html: defaultText }}
         data-placeholder={placeholder}
-        ref={ref}
+        ref={contentRef}
         onPaste={clearEditorAction}
-        onKeyUp={saveTextAction}
+        onInput={saveTextAction}
       />
       <Toolbar tools={tools} />
     </div>

@@ -19,7 +19,7 @@ describe('EasyReactEditor component', () => {
 
     const editorContent = getByText('Initial Text');
 
-    fireEvent.keyUp(editorContent, {
+    fireEvent.input(editorContent, {
       target: { innerHTML: 'Updated Text' },
     });
 

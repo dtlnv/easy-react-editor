@@ -9,6 +9,10 @@
   </a>
 </p>
 
+<p align="center">
+  <img src="preview.gif" alt="Scratch Map App" /> 
+</p>
+
 EasyReactEditor is a simple and customizable React component for building rich-text editors in your web applications. It provides a straightforward way to integrate a WYSIWYG editor into your project, enabling users to create and edit content with ease.
 
 ## Installation
@@ -92,7 +96,9 @@ If you'd like to contribute code to EasyReactEditor, please follow these steps:
 6. Open a pull request on the EasyReactEditor repository and describe your changes and improvements. Your pull request will be reviewed, and once approved, it will be merged into the project!
 
 ## License
+
 This project is licensed under the MIT License.
 
 ## Contact
+
 If you have any questions or feedback, please don't hesitate to contact me: timtemnov@pm.me.
