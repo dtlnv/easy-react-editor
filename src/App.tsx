@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import EasyReactEditor from './lib/Editor';
 
 function App() {
-  const [text, setText] = React.useState('');
+  const [text, setText] = useState('');
 
   useEffect(() => {
     console.log('text changed', text);
