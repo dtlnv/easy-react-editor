@@ -1,4 +1,4 @@
-#ereditor #ere-tools {
+#ereditor #ere-toolbar {
   text-align: left;
   display: flex;
   flex-direction: row;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-#ereditor #ere-tools .ere-tool {
+#ereditor #ere-toolbar .ere-tool {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +21,6 @@
   font-size: 12px;
 }
 
-#ereditor #ere-tools .ere-tool:hover {
+#ereditor #ere-toolbar .ere-tool:hover {
   background-color: #d3d3d3;
 }

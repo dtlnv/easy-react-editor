@@ -10,7 +10,7 @@ interface ToolbarProps {
 
 const Toolbar: React.FC<ToolbarProps> = ({ tools = defaultTools }) => {
   return (
-    <div id='ere-tools'>
+    <div id='ere-toolbar'>
       {tools?.includes('Undo') && <Undo />}
       {tools?.includes('Redo') && <Redo />}
       {tools?.includes('Bold') && <Bold />}

@@ -66,6 +66,17 @@ export default App;
 />
 ```
 
+## Customizing CSS
+
+EasyReactEditor allows you to customize the CSS styles for various parts of the editor to match the look and feel of your application. You can target the following CSS classes and IDs:
+
+- `#ereditor`: The wrapper element for the editor.
+- `#ereditor .ere-content`: The editing field where users enter and format text.
+- `#ere-toolbar`: The toolbar that contains the formatting options.
+- `#ere-toolbar .ere-tool`: Individual tool elements within the toolbar.
+
+
+
 ## Contributing
 
 Thank you for considering contributing to EasyReactEditor! Your contributions help make this project better for everyone.
@@ -90,10 +101,8 @@ We welcome pull requests from the community. If you'd like to contribute code to
 
 6. Open a pull request on the EasyReactEditor repository and describe your changes and improvements. Your pull request will be reviewed, and once approved, it will be merged into the project!
 
-## Contact
-If you have any questions or feedback, please don't hesitate to contact me: timtemnov@pm.me.
-
 ## License
 This project is licensed under the MIT License.
 
-
+## Contact
+If you have any questions or feedback, please don't hesitate to contact me: timtemnov@pm.me.
