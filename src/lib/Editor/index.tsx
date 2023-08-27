@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Toolbar from './toolbar';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -16,26 +16,28 @@ interface EditorProps {
 }
 
 const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, placeholder = 'Type text here...', tools }) => {
-  const [defaultText] = React.useState<string>(text);
-  const ref = React.useRef<HTMLDivElement>(null);
+  const [defaultText] = useState<string>(text);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const clearEditor = () => {
-    setTimeout(() => {
-      if (ref.current) {
-        const elements: NodeListOf<Element> = ref.current.querySelectorAll('*');
-        elements.forEach((element: Element) => {
-          element.removeAttribute('style');
-        });
-      }
+  const clearEditorAction = async () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (ref.current) {
+          const elements: NodeListOf<Element> = ref.current.querySelectorAll('*');
+          elements.forEach((element: Element) => {
+            element.removeAttribute('style');
+          });
+        }
+        resolve(true);
+      });
     });
   };
 
-  const saveText = () => {
-    setTimeout(() => {
-      if (ref.current) {
-        setText(ref.current.innerHTML);
-      }
-    });
+  const saveTextAction = async () => {
+    if (ref.current) {
+      await clearEditorAction();
+      setText(ref.current.innerHTML);
+    }
   };
 
   return (
@@ -47,8 +49,8 @@ const EasyReactEditor: React.FC<EditorProps> = ({ text, setText, placeholder = '
         dangerouslySetInnerHTML={{ __html: defaultText }}
         data-placeholder={placeholder}
         ref={ref}
-        onPaste={clearEditor}
-        onInput={saveText}
+        onPaste={clearEditorAction}
+        onKeyUp={saveTextAction}
       />
       <Toolbar tools={tools} />
     </div>
