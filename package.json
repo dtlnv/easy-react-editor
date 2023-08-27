@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "demo-start": "react-scripts start",
-    "demo-build": "react-scripts build",
+    "demo-build": "GENERATE_SOURCEMAP=false react-scripts build",
     "build": "rm -rf dist && yarn build:esm && yarn build:cjs && yarn build:css",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
