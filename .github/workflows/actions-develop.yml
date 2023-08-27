@@ -33,3 +33,5 @@ jobs:
       timeout-minutes: 10 
     - name: Test functionality
       run: yarn test
+    - name: Check build of the project
+      run: yarn build
