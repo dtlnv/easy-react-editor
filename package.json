@@ -1,8 +1,16 @@
 {
   "name": "easy-react-editor",
   "description": "Super simple react editor",
-  "keywords": ["react", "editor", "react editor", "simple editor", "rich-text", "wysiwyg", "formatting"],
-  "version": "1.0.0",
+  "keywords": [
+    "react",
+    "editor",
+    "react editor",
+    "simple editor",
+    "rich-text",
+    "wysiwyg",
+    "formatting"
+  ],
+  "version": "1.0.1",
   "private": false,
   "license": "MIT",
   "main": "dist/index.ts",
