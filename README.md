@@ -11,14 +11,6 @@
 
 EasyReactEditor is a simple and customizable React component for building rich-text editors in your web applications. It provides a straightforward way to integrate a WYSIWYG editor into your project, enabling users to create and edit content with ease.
 
-## Features
-
-- Rich-Text Editing: Allow users to format text, add images, and create structured content effortlessly.
-- Customizable Toolbar: Define the available formatting options and toolbar layout to match your application's requirements.
-- Easy Integration: Easily integrate EasyReactEditor into your React projects with minimal configuration.
-- Extensible: Extend the functionality with custom plugins and hooks to tailor the editor to your needs.
-- Accessible: Built with accessibility in mind, ensuring a great user experience for all users.
-
 ## Installation
 
 You can install EasyReactEditor via npm:
