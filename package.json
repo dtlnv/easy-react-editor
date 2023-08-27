@@ -1,6 +1,6 @@
 {
   "name": "easy-react-editor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Super simple react editor",
   "author": "dtlnv",
   "keywords": [
@@ -18,8 +18,9 @@
   },
   "private": false,
   "license": "MIT",
-  "main": "dist/index.ts",
-  "module": "dist/index.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "files": [
     "dist",
     "README.md"
@@ -27,7 +28,10 @@
   "scripts": {
     "demo-start": "react-scripts start",
     "demo-build": "react-scripts build",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && yarn build:esm && yarn build:cjs && yarn build:css",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:css": "babel src/lib/Editor/styles --out-dir dist/cjs/Editor/styles --copy-files && babel src/lib/Editor/styles --out-dir dist/esm/Editor/styles --copy-files",
     "test": "react-scripts test --no-cache --watchAll=false --coverage --collectCoverageFrom=src/lib/**/*.{js,jsx,ts,tsx}",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\""
   },
