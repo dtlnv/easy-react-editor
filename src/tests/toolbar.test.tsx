@@ -1,3 +1,4 @@
+import React from 'react';
 import { render } from '@testing-library/react';
 import Toolbar, { defaultTools } from '../lib/Editor/toolbar';
 
@@ -17,7 +18,7 @@ describe('Toolbar component', () => {
   it('should render all tools when they are in the tools prop', () => {
     const { container } = render(<Toolbar tools={defaultTools} />);
     expect(container.querySelector('#ere-toolbar')).toBeInTheDocument();
-    for (let tool of defaultTools) {
+    for (const tool of defaultTools) {
       expect(container.querySelector(`.ere-tool[title=${tool}]`)).toBeInTheDocument();
     }
   });
@@ -25,7 +26,7 @@ describe('Toolbar component', () => {
   it('should render all tools when there is nothing in props', () => {
     const { container } = render(<Toolbar />);
     expect(container.querySelector('#ere-toolbar')).toBeInTheDocument();
-    for (let tool of defaultTools) {
+    for (const tool of defaultTools) {
       expect(container.querySelector(`.ere-tool[title=${tool}]`)).toBeInTheDocument();
     }
   });
