@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Bold, Hr, Italic, Ol, Redo, StrikeThrough, Ul, Underline, Undo } from '../lib/Editor/tools';
 

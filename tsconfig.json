@@ -12,7 +12,7 @@
     "declaration": true,
     "sourceMap": true,
     "rootDir": "./src/lib",
-    "outDir": "./dist",
+    "outDir": "./dist/esm",
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -24,5 +24,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
   },
-  "include": ["./src/lib/**/*"]
+  "include": ["./src/lib"]
 }
