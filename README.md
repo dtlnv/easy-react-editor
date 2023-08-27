@@ -44,8 +44,8 @@ export default App;
 
 ### Props
 
-- `text` (required) - Default text for editing, use `useState` first param.
-- `setText` (required) - `useState` second param.
+- `text` (required) - Default text for editing, use the first return parameter `useState()`.
+- `setText` (required) - Use the second return parameter `useState()`.
 - `placeholder` (optional) - Represents the placeholder text for the input field. Default: `'Type text here...'`,
 - `tools` (optional) - Allows you to customize the available formatting tools in the editor's toolbar. Default: `['Undo', 'Redo', 'Bold', 'Italic', 'Underline', 'StrikeThrough', 'UL', 'OL', 'HR']`.
 
@@ -67,8 +67,6 @@ EasyReactEditor allows you to customize the CSS styles for various parts of the 
 - `#ere-toolbar`: The toolbar that contains the formatting options.
 - `#ere-toolbar .ere-tool`: Individual tool elements within the toolbar.
 
-
-
 ## Contributing
 
 Thank you for considering contributing to EasyReactEditor! Your contributions help make this project better for everyone.
@@ -79,7 +77,7 @@ If you find a bug, have a suggestion, or want to request a new feature, please o
 
 ### Pull Requests
 
-We welcome pull requests from the community. If you'd like to contribute code to EasyReactEditor, please follow these steps:
+If you'd like to contribute code to EasyReactEditor, please follow these steps:
 
 1. Fork the [EasyReactEditor repository](https://github.com/dtlnv/easy-react-editor) on GitHub.
 
